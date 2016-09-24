@@ -6,21 +6,43 @@ using System.Threading.Tasks;
 
 namespace BankAccount
 {
-    public abstract class Account
+    class Account
     {
 
         //fields
         protected string nameOnAccount = "Lebron James";
+        protected string address = "2016 Championship Lane, Cleveland, OH";
+        protected string phoneNumber = "232-323-2323";
+        protected string email = "cavs#1@gmail.com";
+        protected int accountBalance;
 
 
         //properties
 
         //methods
 
-        public abstract int Deposit(int money);
+        public virtual int Deposit(int money)
+        {
+            return accountBalance;
+        }
+        
+        public virtual int Withdrawal(int money)
+        {
+            return accountBalance;
+        }
 
+        public virtual void ViewAccountBalance()
+        {
 
-        public abstract int Withdrawal(int money);
+        }
+
+        public void ClientInfo()
+        {
+            Console.WriteLine("Name: " + nameOnAccount);
+            Console.WriteLine("Address: " + address);
+            Console.WriteLine("Phone Number: " + phoneNumber);
+            Console.WriteLine("Email: " + email);
+        }
         
     }
 }

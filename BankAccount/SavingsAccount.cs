@@ -8,14 +8,52 @@ namespace BankAccount
 {
     class SavingsAccount : Account
     {
+
+        //fields
+
+        private int accountBalance;
+        private string accountNumber;
+
+
+        //properties
+
+        public int AccountBalance
+        {
+            get { return this.accountBalance; }
+            set { this.accountBalance = value; }
+        }
+
+        public string AccountNumber
+        {
+            get { return this.accountNumber; }
+            set { this.accountNumber = value; }
+        }
+
+        //constructor
+
+        public SavingsAccount()
+        {
+            this.accountNumber = "90210";
+            this.accountBalance = 3000000;
+        }
+
+        //methods
+
         public override int Deposit(int money)
         {
-            throw new NotImplementedException();
+            this.accountBalance += money;
+            return this.accountBalance;
         }
 
         public override int Withdrawal(int money)
         {
-            throw new NotImplementedException();
+            this.accountBalance -= money;
+            return this.accountBalance;
+        }
+
+        public override void ViewAccountBalance()
+        {
+            Console.WriteLine("The account balance in your savings account is " + AccountBalance);
         }
     }
 }
