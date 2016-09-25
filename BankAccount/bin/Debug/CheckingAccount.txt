@@ -1,0 +1,3 @@
+Account Type: Checking Account
+Client Account Number: 54321
+

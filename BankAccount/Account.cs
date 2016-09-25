@@ -10,14 +10,22 @@ namespace BankAccount
     {
 
         //fields
-        protected string nameOnAccount = "Lebron James";
+        
+        protected string nameOnAccount;
         protected string address = "2016 Championship Lane, Cleveland, OH";
         protected string phoneNumber = "232-323-2323";
         protected string email = "cavs#1@gmail.com";
-        protected int accountBalance;
+        private int accountBalance;
 
 
         //properties
+
+
+        //constructor
+        public Account(string holderName)
+        {
+            nameOnAccount = holderName;
+        }
 
         //methods
 

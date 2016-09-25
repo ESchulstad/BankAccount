@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace BankAccount
 {
@@ -10,11 +11,17 @@ namespace BankAccount
     {
         static void Main(string[] args)
         {
+            //ask for name
 
-            SavingsAccount savings = new SavingsAccount();
-            CheckingAccount checking = new CheckingAccount();
-            ReserveAccount reserve = new ReserveAccount();
-            Account lebron = new Account();
+            Console.WriteLine("Please enter your name for your password.");
+            string holderName = Console.ReadLine();
+
+            Console.Clear();
+
+            SavingsAccount savings = new SavingsAccount(holderName);
+            CheckingAccount checking = new CheckingAccount(holderName);
+            ReserveAccount reserve = new ReserveAccount(holderName);
+            
 
             while(true)
             {
@@ -36,7 +43,7 @@ namespace BankAccount
                 switch(action)
                 {
                     case 1:
-                        lebron.ClientInfo();
+                        savings.ClientInfo();
                         break;
 
                     case 2:
@@ -83,8 +90,36 @@ namespace BankAccount
                         break;
 
                     case 6:
-                        break;
+                        Console.WriteLine("Where would you like to make a withdrawal?");
+                        Console.WriteLine("1: Checking Account");
+                        Console.WriteLine("2: Savings Account");
+                        Console.WriteLine("3: Reserve Account");
 
+                        int pick = int.Parse(Console.ReadLine());
+
+                        Console.WriteLine("How much would you like to withdrawal?");
+
+                        int withdrawal = int.Parse(Console.ReadLine());
+
+                        switch (pick)
+                        {
+                            case 1:
+                                checking.Withdrawal(withdrawal);
+                                Console.WriteLine("The new balance is " + checking.AccountBalance);
+                                break;
+
+                            case 2:
+                                savings.Withdrawal(withdrawal);
+                                Console.WriteLine("The new balance is " + savings.AccountBalance);
+                                break;
+
+                            case 3:
+                                reserve.Withdrawal(withdrawal);
+                                Console.WriteLine("The new balance is " + reserve.AccountBalance);
+                                break;
+                        }
+                        break;
+                       
                     case 7:
                         Quit();
                         break;
@@ -103,50 +138,14 @@ namespace BankAccount
                 }
                 else
                 {
+                    Console.Clear();
                     Quit();
                 }
 
             }
         }
 
-        //static void DepositCase()
-        //{
 
-        //    SavingsAccount savings = new SavingsAccount();
-        //    CheckingAccount checking = new CheckingAccount();
-        //    ReserveAccount reserve = new ReserveAccount();
-
-
-        //    Console.WriteLine("Where would you like to make a deposit?");
-        //    Console.WriteLine("1: Checking Account");
-        //    Console.WriteLine("2: Savings Account");
-        //    Console.WriteLine("3: Reserve Account");
-
-        //    int choice = int.Parse(Console.ReadLine());
-
-        //    Console.WriteLine("How much would you like to deposit?");
-
-        //    int deposit = int.Parse(Console.ReadLine());
-
-        //    switch(choice)
-        //    {
-        //        case 1:
-        //            checking.Deposit(deposit);
-        //            Console.WriteLine("The new balance is " + checking.AccountBalance);
-        //            break;
-
-        //        case 2:
-        //            savings.Deposit(deposit);
-        //            Console.WriteLine("The new balance is " + savings.AccountBalance);
-        //            break;
-
-        //        case 3:
-        //            reserve.Deposit(deposit);
-        //            Console.WriteLine("The new balance is " + reserve.AccountBalance);
-        //            break;
-        //    }
-
-        //}
 
         static void Quit()
         {

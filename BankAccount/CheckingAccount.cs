@@ -31,7 +31,7 @@ namespace BankAccount
 
         //constructor
 
-        public CheckingAccount()
+        public CheckingAccount(string holderName): base(holderName)
         {
             this.accountNumber = "54321";
             this.accountBalance = 1000000;
