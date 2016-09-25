@@ -1,3 +1,4 @@
+Account Holder: James
+Account Number: 54321
 Account Type: Checking Account
-Client Account Number: 54321
-
+Account Balance: 1000000

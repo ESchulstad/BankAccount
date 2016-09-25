@@ -1,2 +1,4 @@
+Account Holder: James
+Account Number: 44124
 Account Type: Reserve Account
-Client Account Number: 44124
+Account Balance: 500000

@@ -1,2 +1,4 @@
+Account Holder: James
+Account Number: 90210
 Account Type: Savings Account
-Client Account Number: 90210
+Account Balance: 3000000
