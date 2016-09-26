@@ -16,6 +16,7 @@ namespace BankAccount
 
 
         //properties
+        //so program can access private fields
 
         public int AccountBalance
         {

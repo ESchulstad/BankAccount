@@ -16,6 +16,7 @@ namespace BankAccount
 
 
         //properties
+        //so program can access the private fields
 
         public int AccountBalance
         {
@@ -30,12 +31,15 @@ namespace BankAccount
         }
 
         //constructor
+        //sets defaults
 
         public ReserveAccount(string holderName):base(holderName)
         {
             this.accountNumber = "44124";
             this.accountBalance = 500000;
         }
+
+        //methods
 
         public override int Deposit(int money)
         {
